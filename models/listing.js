@@ -8,12 +8,17 @@ const listingSchema = new Schema({
     }, 
     description: String,
     image: {
-        type: String,
-        default:"https://unsplash.com/photos/a-blurry-photo-of-a-plant-in-the-snow-_VGtRB7Hx50",
-        set: (v) => 
-            v=== "" 
-            ? "https://unsplash.com/photos/a-blurry-photo-of-a-plant-in-the-snow-_VGtRB7Hx50" 
-            : v,
+        type:{
+            filename: String,
+            url: String
+        },
+              //type: String,
+               default:"https://unsplash.com/photos/a-blurry-photo-of-a-plant-in-the-snow-_VGtRB7Hx50",
+               set: (v) => 
+                    v=== "" 
+                    ? "https://unsplash.com/photos/a-blurry-photo-of-a-plant-in-the-snow-_VGtRB7Hx50" 
+                    : v,
+        
     },
     price: Number,
     location: String,
